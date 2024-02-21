@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Karla:wght@700&family=Mulish:ital,wght@0,400;0,600;1,500&family=Nunito&family=Open+Sans&family=Poppins:wght@500&family=Roboto&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.login_body {
+    font-family: "Poppins";
+    height: fit-content;
+}
+
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: inherit;
+    border: 2px solid;
+    outline: 0;
+    /* box-shadow: 0 0 0 .25rem rgba(13,110,253,.25); */
+    box-shadow:none;
+}
+
+
+.login_bg_image_container.card {
+    border: none !important;
+    background-color: #e5e4e4;
+}
+
+.login_bg {
+   background-color: #e5e4e4;
+}
