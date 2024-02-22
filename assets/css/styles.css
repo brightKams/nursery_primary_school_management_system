@@ -45,3 +45,11 @@ body {
     height: 50px;
 }
 
+
+
+@media screen and (max-width: 768px) {
+    .form_wrapper {
+        width: 90%;
+    }
+}
+
