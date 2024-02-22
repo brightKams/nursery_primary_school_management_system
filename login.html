@@ -20,7 +20,7 @@
 </head>
 <body class="login_body ">
 
-<div class="row border">
+<div class="row w-100 m-auto  login_wrapper ">
 
     <div class="col-7 p-4 login_bg d-none d-md-block ">
         <div class="row  p-1  ">
@@ -40,31 +40,31 @@
 
     </div>
     
-    <div class="form_container col-md-5 col-sm-10 m-auto px-4 py-3 ">
-        <div class="row-group">
-            <div class="row d-md-none">
-                <h5 class="col-8 m-auto fw-bolder">Nursery/Primary School Management System</h5>
-                <p class="card-text col-8 m-auto ">Manage Student data, Parents' contacts, Subjects, Assessments, Fees, and Classes.</p>
+    <div class="form_container col-md-5 col-sm-10 m-auto px-4 py-5  py-md-3 ">
+        <div class="row ">
+            <div class="col-group pb-4 d-md-none">
+                <h5 class="col-12 col-md-8 m-auto fw-bolder">Nursery/Primary School Management System</h5>
+                <p class="card-text col-12 col-md-8 m-auto ">Manage Student data, Parents' contacts, Subjects, Assessments, Fees, and Classes.</p>
 
             </div>
 
-            <div class="row">
+            <div class="col-group">
 
-                <h3 class="login_heading m-auto col-8 py-2 fw-bolder">
+                <h3 class="login_heading m-auto col-12 col-md-8 py-2 fw-bolder">
                     Login
                 </h3>
             </div>
 
         </div>
-        <form class="row g-2 border-3 h-100 needs-validation" action=/login.php" method="post">
-          <div class="col-8 py-2 m-auto">
+        <form class="row g-2 h-100 needs-validation" action=/login.php" method="post">
+          <div class="col-12 col-md-8 py-2 m-auto">
             <label for="user_ID" class="form-label user_ID_label">User ID</label>
             <input type="text" class="form-control user_ID" id="user_ID" placeholder="Enter User ID" required>
             <!-- <div class="valid-feedback">
               Looks good!
             </div> -->
           </div>
-          <div class="col-8 py-2 m-auto">
+          <div class="col-12 col-md-8 py-2 m-auto">
             <label for="password" class="form-label password_label">Password</label>
             <input type="password" class="form-control password" id="password" placeholder="**************" required>
             <!-- <div class="valid-feedback">
@@ -72,14 +72,14 @@
             </div> -->
           </div>
           
-          <div class="col-8 py-3 m-auto  ">
+          <div class="col-12 col-md-8 py-3 m-auto  ">
             <button class="btn btn-dark p-2 w-100" type="submit">Submit form</button>
           </div>
 
-          <div class="col-8 py-1 m-auto text-right">
+          <div class="col-12 col-md-8 py-1 m-auto text-right">
             <a class="nav-link forgot_password_link text-primary id="forgot_password_link" aria-current="page" href="#">Forgot your password?</a>
           </div>
-          <div class="col-8 py-1 m-auto text-right">
+          <div class="col-12 col-md-8 py-1 m-auto text-right">
             <a class="nav-link register_link text-primary id="sign_up_link" aria-current="page" href="signup.html">Register</a>
           </div>
           
