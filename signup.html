@@ -22,6 +22,7 @@
 
 <body class="sign_up_body border border-3">
 
+
     <div class="form_wrapper row m-auto justify-content-center my-5 py-5 rounded-3 bg-white">
         <h1 class="signUp_heading fw-bolder text-center" id="signUp_heading">
             Sign UP
@@ -30,13 +31,13 @@
             Register to access student data and events.
         </p>
 
-        <form class="signUp_form  row justify-content-center rounded col-11 g-3 bg-white needs-validation mt-1 mb-3 m-auto" novalidate>
+        <form class="signUp_form  row justify-content-center rounded col-11 g-3 bg-white needs-validation mt-1 mb-3 m-auto" >
           <div class="col-md-12">
             <label for="FirstName" class="form-label fName_label">First name</label>
             <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                <input type="text" class="form-control fName" id="fName"  required> 
+                <input type="text" class="form-control fName" id="fName" placeholder=" First Name " required> 
                 <span class="input-text rounded">
-                    <i class="bi bi-person-lines-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
+                    <i class="bi bi-person-vcard-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                         
                     </i>
                 </span>
@@ -48,9 +49,9 @@
           <div class="col-md-12">
             <label for="lastName" class="form-label lName_label">Last Name</label>
             <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                <input type="text" class="form-control lName" id="lName" required>
+                <input type="text" class="form-control lName" id="lName" placeholder=" Last Name " required>
                 <span class="input-text rounded">
-                    <i class="bi bi-person-lines-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
+                    <i class="bi bi-person-vcard-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                         
                     </i>
                 </span>
@@ -118,7 +119,7 @@
                 <label for="conPasswordLabel" class="form-label conPassword_label">Confirm Password</label>
 
                 <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                    <input type="password" class="form-control confirmPassword" id="confirmPassword" required >
+                    <input type="password" class="form-control confirmPassword" id="confirmPassword" placeholder=" ************* " required >
                     <span class="input-text rounded">
                                         <i class="bi bi-lock-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                                             
@@ -145,7 +146,7 @@
             </div>
           </div>
           <div class="col-md-12">
-            <button class="btn btn-primary w-100 mb-2 p-4 rounded-2" type="submit">Join</button>
+            <button class="btn btn-primary w-100 mb-2 p-4 rounded-2" onclick="window.location.href='login.html'" type="submit">Join</button>
           </div>
 
           <div class="col-8  col-md-6">
