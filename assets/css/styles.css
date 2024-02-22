@@ -52,4 +52,12 @@ body {
         width: 90%;
     }
 }
+@media screen and (max-width: 576px) {
+    .login_link {
+        text-align: center;
+    }
+}
+
+
+
 
