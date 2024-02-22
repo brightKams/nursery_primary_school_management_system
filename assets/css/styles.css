@@ -11,9 +11,8 @@
 
 .login_body {
     font-family: "Poppins";
-    height: fit-content;
+   
 }
-
 
 .form-control:focus {
     color: var(--bs-body-color);
@@ -33,4 +32,5 @@
 
 .login_bg {
    background-color: #e5e4e4;
+   height: 100%;
 }
