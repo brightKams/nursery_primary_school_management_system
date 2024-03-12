@@ -11,6 +11,41 @@ body {
   font-family: "Poppins";
 }
 
+/* UTILITY STYLES */
+.explore-btn:hover {
+  background-color: transparent !important;
+  color: #49A5FF !important;
+  border: 2px solid #49A5FF !important;
+  font-weight: bold;
+}
+.enroll-btn {
+  border-color: #151515;
+  border-width: 1px solid !important;
+}
+.enroll-btn:hover {
+  color: #fff !important;
+  border-color: transparent !important;
+  background-color: #49A5FF !important;
+
+
+}
+
+
+/* END OF UTILITY STYLES */
+.hero {
+  margin-top: 10%;
+ 
+}
+
+.signUp-heading {
+  width: 20% !important;
+}
+
+.hero-img-container {
+  background: url("../images/hero-img.png") no-repeat center center;
+  background-size: contain;
+}
+
 .form-control:focus {
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
@@ -66,11 +101,24 @@ body {
 
 
 @media screen and (max-width: 768px) {
+
+  /* .hero-text-wrapper {
+    background: url("../images/hero-img.png") no-repeat top center;
+    background-size: cover;
+  } */
+
+  .signUp-heading {
+    width: 30% !important;
+  }
     .form_wrapper {
         width: 90%;
     }
 }
 @media screen and (max-width: 576px) {
+
+  .signUp-heading {
+    width: 40% !important;
+  }
     .login_link {
         text-align: center;
     }
