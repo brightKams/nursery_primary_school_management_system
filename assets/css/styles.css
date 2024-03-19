@@ -156,8 +156,9 @@ aside {
   
 }
 
-.dashboard-header {
+.dashboard-header, .dashboard-main-container {
   width: 95%;
+  margin: auto;
 }
 
 .grade-container > div {
@@ -196,10 +197,12 @@ aside {
   top: 40%;
   left: 5%;
 }
-
 .messages-wrapper {
   width: 32%;
-  
+}
+
+.ward-activities-container {
+  width: 45%;
 }
 @media screen and (max-width: 768px) {
 
