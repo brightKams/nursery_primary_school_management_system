@@ -112,7 +112,7 @@
 
                 else {
                     // echo "<strong>Hello World</strong><br>" . $user_id;
-                    header("location: index.php");
+                    header("location: dashboard.php");
                     $data = empty($user_id);
                 }
                 
