@@ -21,9 +21,16 @@
 </head>
 
 <body class="sign_up_body border border-3">
-
-
+            <div class="container " >
+                <div class="container " style="float: left;">
+                  <ul style="margin-right:auto; padding-right:0%; float: left; color: red; font-size:medium;">
+                    <a style="colour: blue ;" href="index.php">Home</a>
+                  </ul>
+                </div>
+              </div>
+        
     <div class="form_wrapper row m-auto justify-content-center my-5 py-5 rounded-3 bg-white">
+        
         <h1 class="signUp_heading fw-bolder text-center" id="signUp_heading">
             Sign UP
         </h1>
