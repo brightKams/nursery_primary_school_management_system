@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Combo&family=Karla:wght@700&family=Mulish:ital,wght@0,400;0,600;1,500&family=Nunito&family=Open+Sans&family=Poppins:wght@500&family=Roboto&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+}
+/* UTILITY STYLES */
+a {
+  text-decoration: none;
+}
+button {
+  transition: all 0.7s ease-in !important;
+}
+.explore-btn:hover {
+  background-color: transparent !important;
+  color: #49A5FF !important;
+  border: 2px solid #49A5FF !important;
+  font-weight: bold;
+}
+.enroll-btn {
+  border-color: #151515;
+  border-width: 1px solid !important;
+  /* transition: all 0.5s ease-in !important; */
+}
+.enroll-btn:hover {
+  color: #fff !important;
+  border-color: transparent !important;
+  background-color: #49A5FF !important;
+}
+
+
+/* END OF UTILITY STYLES */
+.hero {
+  margin-top: 10%;
+}
+
+.signUp-heading {
+  width: 20% !important;
+}
+
+.hero-img-container {
+  background: url("../images/hero-img.png") no-repeat center center;
+  background-size: contain;
+}
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: inherit;
+  border: 2px solid;
+  outline: 0;
+  /* box-shadow: 0 0 0 .25rem rgba(13,110,253,.25); */
+  box-shadow: none;
+}
+.form-control:focus-within {
+ 
+  border-color: #808080;
+ 
+}
+
+.login_bg_image_container.card {
+  border: none !important;
+  background-color: #e5e4e4;
+}
+
+.login_bg {
+  background-color: #e5e4e4;
+  height: 100%;
+}
+
+
+/* STYLING FOR SIGN UP PAGE */
+
+.sign_up_body {
+   
+    background: url("../images/Group.png") no-repeat top center fixed ;
+    background-size: cover;
+ 
+}
+
+.form_wrapper {
+    width: 40%;
+}
+
+.form-control {
+  height: 60px;
+
+}
+body.sign_up_body form.signUp_form .form-control, .recoverBtn, .recoverBtn-wrapper {
+    border-right: 0;
+}
+
+.bi {
+    padding: 3px;
+    height: 100%;
+    border: none;
+    color: #7c7d82;
+
+}
+
+
+
+
+/* <<<<<    *****  DASHBOARD STYLINGS  *******>>>>>>>> */
+
+.dashboard-wrapper, .navigation-wrapper {
+  /* height: 100vh; */
+  overflow-y: auto;
+}
+
+.dashboard-navigation-wrapper {
+  min-height: 50vh;
+}
+
+aside {
+  background-color: #4E5F9B;
+  height: 100%;
+}
+.user-profile-img-wrapper {
+  height: 120px;
+  width: 120px;
+}
+
+.nav-item {
+  width: 70%;
+  margin: auto  ;
+  margin: 20px auto;
+}
+
+.material-symbols-outlined {
+  width:20%;
+  padding: 5px;
+}
+.search-btn, .search-btn:hover {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: #808;
+  outline: transparent;
+  background: transparent;
+}
+
+
+.dashboard > nav .material-symbols-outlined {
+  margin: 3px;
+  width: 30%;
+  height: 100% ;
+  text-align: center;
+  /* border: 1px solid; */
+  
+}
+
+.dashboard-header, .dashboard-main-container {
+  width: 95%;
+  margin: auto;
+}
+
+.grade-container > div {
+    padding: 5px;
+}
+
+.grade-container:hover {
+  cursor: pointer;
+}
+
+.grade-container img {
+  background-color: #4E5F9B;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10%;
+  outline: none;
+  border: none;
+}
+.grade-score {
+  background-color: #D6EEED; 
+  border-radius: 50%;
+
+}
+
+
+.events-display-card-img {
+  height: 150px;
+}
+
+.event-highlight-card {
+  width: 48%;
+}
+ 
+.negative-position {
+  top: 40%;
+  left: 5%;
+}
+.messages-wrapper {
+  width: 32%;
+}
+
+.ward-activities-container {
+  width: 45%;
+}
+@media screen and (max-width: 768px) {
+
+  /* .hero-text-wrapper {
+    background: url("../images/hero-img.png") no-repeat top center;
+    background-size: cover;
+  } */
+
+  .signUp-heading {
+    width: 30% !important;
+  }
+    .form_wrapper {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 576px) {
+
+  .signUp-heading {
+    width: 40% !important;
+  }
+    .login_link {
+        text-align: center;
+    }
+}
+
+
+
+

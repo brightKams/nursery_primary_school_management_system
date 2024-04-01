@@ -22,7 +22,7 @@
 
     <main class="landingPage container-fluid border border-3 mb-0 px-0">
         <h1 class="signUp-heading w-25 pe-3 me-3 float-end  my-4">
-            <a href="login.php"
+            <a href="login.html"
                 class="login-link text-decoration-none p-3 w-100  d-inline-block  text-center border rounded-4">Login</a>
             <!-- <button class="login-link text-decoration-none p-3 w-100  d-inline-block  text-center border bg-transparent rounded-4" onclick="window.location.href ='login.php'" >    Login</button> -->
         </h1>

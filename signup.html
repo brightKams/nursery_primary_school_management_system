@@ -21,7 +21,16 @@
 </head>
 
 <body class="sign_up_body border border-3">
+<!---Home tab begins-->
+<div class="container ">
+  <div class="container row" style="float: right;">
+    <ul style="margin-right:auto; padding-right:0%; float: right; color: red; font-size:medium;">
+      <a style="colour: blue ;" href="index.php">Home</a>
+    </ul>
+  </div>
+</div>
 
+<!---Home tab ends-->
 
     <div class="form_wrapper row m-auto justify-content-center my-5 py-5 rounded-3 bg-white">
         <h1 class="signUp_heading fw-bolder text-center" id="signUp_heading">
@@ -35,7 +44,7 @@
           <div class="col-md-12">
             <label for="FirstName" class="form-label fName_label">First name</label>
             <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                <input type="text" class="form-control fName" id="fName" placeholder=" First Name " required> 
+                <input type="text" class="form-control fName" name="firstname" id="fName" placeholder=" First Name " required> 
                 <span class="input-text rounded">
                     <i class="bi bi-person-vcard-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                         
@@ -46,11 +55,10 @@
               Looks good!
             </div>
           </div>
-          
           <div class="col-md-12">
             <label for="lastName" class="form-label lName_label">Last Name</label>
             <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                <input type="text" class="form-control lName" id="lName" placeholder=" Last Name " required>
+                <input type="text" class="form-control lName" name="lastname" id="lName" placeholder=" Last Name " required>
                 <span class="input-text rounded">
                     <i class="bi bi-person-vcard-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                         
@@ -67,7 +75,7 @@
                 <label for="emailLabel" class="form-label email_label">Email</label>
 
                 <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                    <input type="email" class="form-control email" id="email" placeholder="******@domain.com" >
+                    <input type="email" class="form-control email" name="email" id="email" placeholder="******@domain.com" >
                     <span class="input-text rounded">
                             <i class="bi bi-envelope-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                                 
@@ -86,7 +94,7 @@
                 <label for="username" class="form-label username_label">Username</label>
           
                 <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                    <input type="username" class="form-control username" id="username" placeholder=" johndoe ~ P001johndoe" required>
+                    <input type="username" class="form-control username" name="username" id="username" placeholder=" johndoe ~ P001johndoe" required>
                     <span class="input-text rounded">
                                         <i class="bi bi-person-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                                             
@@ -100,10 +108,10 @@
           </div>
 
           <div class="col-md-12">
-                <label for="passwordLabel" class="form-label password_label">Set a Secure Password</label>
-
+                <label for="password" class="form-label password_label">Set a Secure Password</label>
+                <!--<label for="passwordLabel" class="form-label password_label">Set a Secure Password</label>-->
                 <div class="input-group border  rounded d-flex align-items-center justify-content-center ">
-                    <input type="password" class="form-control password" id="password" placeholder=" ************* " required>
+                    <input type="password" class="form-control password" name="password" id="password" placeholder=" ************* " required>
                     <span class="input-text rounded">
                                         <i class="bi bi-key-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                                             
@@ -117,10 +125,10 @@
             
           </div>
           <div class="col-md-12">
-                <label for="conPasswordLabel" class="form-label conPassword_label">Confirm Password</label>
-
+                <label for="confirmPassword" class="form-label conPassword_label">Confirm Password</label>
+                <!--<label for="conPasswordLabel" class="form-label conPassword_label">Confirm Password</label>-->
                 <div class="input-group border rounded d-flex align-items-center justify-content-center ">
-                    <input type="password" class="form-control confirmPassword" id="confirmPassword" placeholder=" ************* " required >
+                    <input type="password" class="form-control confirmPassword" name="confirmPassword" id="confirmPassword" placeholder=" ************* " required >
                     <span class="input-text rounded">
                                         <i class="bi bi-lock-fill rounded p-2 d-inlinie-block fw-bolder fs-2 ">
                                             
