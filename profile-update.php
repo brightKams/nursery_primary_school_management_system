@@ -30,9 +30,17 @@
             <aside class="navigation-wrapper pt-5  m-auto col-12 ">
                 <div class="user-profile-wrapper col-8 my-5  m-auto ">
                     <div class="user-profile-img-wrapper m-auto position-relative p-0 rounded-circle">
+                        <div class="container">
+                            <div class="container " style="float: right;">
+                                <ul style="margin-right:auto; padding-right:0%; float: right; font-size:medium;" >
+                                    <a href="logout.php">Logout</a>                 
+                                </ul>
+                            </div>
+                        </div>
                         <img src="./assets/images/male-avatar-profile-picture.jpg" alt="User_image "
                             class="user-img rounded-circle" width="120px" height="120px">
                     </div>
+                    <br>
                     <span class="user-ID fw-bolder m-auto d-inline-block w-100 text-center mt-3 ">OKT MUM </span>
                 </div>
 
@@ -44,7 +52,7 @@
                             <span class="material-symbols-outlined text-white ">
                                 dashboard
                             </span>
-                            <a href="" class="quicklinks d-inline-block w-75 text-white">Parent</a>
+                            <a href="fetchparent.php" class="quicklinks d-inline-block w-75 text-white">Parent</a>
                         </li>
                         <li class="nav-item d-flex justify-content-between align-items-center text-white">
                             <span class="material-symbols-outlined text-white">

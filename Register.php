@@ -42,9 +42,22 @@ if (strlen($_POST["password"]) < 8){
        
     else
     {   
-        $sql = "INSERT INTO users (username,password,email, roleid) VALUES ('$username','$password','$email','1')";
+        //New lines begin here
+        $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        //var_dump($password_hash);
+        //New line ends here
+        //$sql = "INSERT INTO users (username,password,email, roleid) VALUES (?, ?, ?', '1')";
+        $sql = "INSERT INTO users (username,password_hash,email, roleid) VALUES ('$username','$password_hash','$email','1')";
         $sql2 = "INSERT INTO persons (firstname,lastname,email) VALUES ('$firstname','$lastname','$email')";
-           
+        
+        $stmt = $db->stmt_init(); //New line
+
+        if (! $stmt->prepare($sql)){ //New line
+            die("SQL error: " . $db->error); //New line
+        }//New line
+/*$stmt->bind_param("sss", $_POST["username"], $_POST["password-hash"], $_POST["email"], $_POST["roleid"]); //New line
+
+$stmt->execute(); //New line*/
         $result = mysqli_query($db, $sql);
         $result2 = mysqli_query($db, $sql2);
 
