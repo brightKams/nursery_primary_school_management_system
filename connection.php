@@ -12,5 +12,15 @@
     }
 
     return $db;
-   
+   //New line starts here
+public statis function userName($id)
+{
+    $session=loginlogout::connect()->prepare("SELECT firstname from users where id=:id");
+    $session->bindValue(':id',$id);
+    $session->execute();
+    $fetch=$session->fetch(PDO::FETCH_ASSOC);
+    return $fetch;
+
+}
+
 ?>

@@ -22,10 +22,35 @@ $sql = "UPDATE Users
 $stmt = $db -> prepare($sql);
 
 
-$stmt->bind_param("SSS", $token_hash, $expiry, $email);
+$stmt->bind_param("sss", $token_hash, $expiry, $email);
 
 $stmt -> execute();
 
+if ($db->affected_rows){
+
+   $mail = require __DIR__ . "/mailer.php";
+
+   $mail->setFrom("noreply@gmail.com");
+   $mail->addAddress($email);
+   $mail->Subject = "Password Reset";
+   $mail->Body = <<<END
+
+   Click <a href="http://localhost:8080/GroupK/nursery_primary_school_management_system/reset-password.php?token=$token">here</a> to reset your password.
+   //Click <a href="http://example.com/reset-password.php?token=$token">here</a> to reset your password.
+
+   END;
+
+   try {
+$mail->send();
+
+   } catch (Exception $e){
+    echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+
+   }
+
+}
+
+echo " Message sent, please check your inbox.";
 //IF ($mysqli -> affected_rows){
   //  Continue the youtube video guide here: https://youtu.be/R9bfts9ZFjs
 //}

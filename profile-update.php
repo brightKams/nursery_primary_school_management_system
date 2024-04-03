@@ -1,3 +1,15 @@
+<?php
+require './connection.php';
+session_start();
+if (isset($_SESSION['id'])){
+    $session=$_SESSION['id'];
+    $fetchUsername=loginlogout::userName($id);
+    //var_dump($fetchUsername);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +43,7 @@
                 <div class="user-profile-wrapper col-8 my-5  m-auto ">
                     <div class="user-profile-img-wrapper m-auto position-relative p-0 rounded-circle">
                         <div class="container">
-                            <div class="container " style="float: right;">
+                            <div class="container" style="float: right;">
                                 <ul style="margin-right:auto; padding-right:0%; float: right; font-size:medium;" >
                                     <a href="logout.php">Logout</a>                 
                                 </ul>
@@ -41,8 +53,18 @@
                             class="user-img rounded-circle" width="120px" height="120px">
                     </div>
                     <br>
+
                     <span class="user-ID fw-bolder m-auto d-inline-block w-100 text-center mt-3 ">OKT MUM </span>
                 </div>
+
+                <!--<div>
+                    <ul>
+                        <li><a href="#" <?php if (isset($fetchUsername)){
+	                        echo $$fetchUsername['firstname'];
+                                }?></a></li>  
+                    </ul>
+
+                </div>-->
 
                 <nav class="col-10 my-0 m-auto ">
                     <h3 class=" m-auto p-0  mt-1 text-center p-3 "> General </h3>
@@ -52,7 +74,7 @@
                             <span class="material-symbols-outlined text-white ">
                                 dashboard
                             </span>
-                            <a href="fetchparent.php" class="quicklinks d-inline-block w-75 text-white">Parent</a>
+                            <a href="fetchparent.php" class="quicklinks d-inline-block w-75 text-white" >Parent</a>
                         </li>
                         <li class="nav-item d-flex justify-content-between align-items-center text-white">
                             <span class="material-symbols-outlined text-white">
