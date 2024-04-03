@@ -13,7 +13,7 @@
 
     return $db;
    //New line starts here
-public statis function userName($id)
+/*public statis function userName($id)
 {
     $session=loginlogout::connect()->prepare("SELECT firstname from users where id=:id");
     $session->bindValue(':id',$id);
@@ -22,5 +22,5 @@ public statis function userName($id)
     return $fetch;
 
 }
-
+*/
 ?>
