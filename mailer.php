@@ -22,7 +22,7 @@ $mail->SMTPSecure = false;
 //$mail->PORT = '587';
 $mail->PORT = 465;
 $mail->Username = "c.ajah@rgu.ac.uk";
-$mail->Password = "11Omenkaclai";
+$mail->Password = "";
 
 $mail->isHtml(true);
 
