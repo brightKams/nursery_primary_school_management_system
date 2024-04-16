@@ -19,7 +19,7 @@
   //   }
   // }
 
-  while ($_SERVER["REQUEST_METHOD"] === "POST") {
+  if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if (empty(validateInput($_POST["username"])) || empty(validateInput($_POST["password"]))) {
@@ -30,7 +30,7 @@
       $username = validateInput($_POST["username"]);
       $password = validateInput($_POST["password"]);
       // $sql = "SELECT username FROM users WHERE username = '$username' and password = '$password' ";
-      $sql = "SELECT roleid, Accountstatus,password_hash FROM users WHERE username='$username' and password='$password'";
+      $sql = "SELECT roleid, Accountstatus,password_hash FROM users WHERE username='$username' and password_hash='$password'";
 
       $result = mysqli_query($db, $sql);
       $row = mysqli_fetch_array($result);

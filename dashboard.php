@@ -28,6 +28,10 @@
     <div class="dashboard-wrapper container-fluid row justify-content-between px-0 mx-0">
         <div class="dashboard-navigation-wrapper col-lg-2 col-10 col-md-4  text-white  px-0  ">
             <aside class="navigation-wrapper pt-5  m-auto col-12 ">
+            <div class="logout-wrapper m-auto d-flex justify-content-center align-items-center "><button class="btn-logout btn border
+                 m-auto  text-white p-3" onclick="document.location.href = 'index.php'">Logout</button>
+                </div>
+                
                 <div class="user-profile-wrapper col-8 my-5  m-auto ">
                     <div class="user-profile-img-wrapper m-auto position-relative p-0 rounded-circle">
                         <img src="./assets/images/male-avatar-profile-picture.jpg" alt="User_image "

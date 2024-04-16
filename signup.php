@@ -32,8 +32,8 @@
         $confirm_password = validateInput($_POST["confirmPassword"]);
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
        
-        $sql =  "INSERT INTO users (username, password_hash, email, roleid) VALUES ('$username', '$password_hash', '$email', '1')" ;
-        $sql2 = "INSERT INTO persons (firstname, lastname,  email)  VALUES ('$first_name', '$last_name', '$email')" ;
+        $sql =  "INSERT INTO users (username, password_hash, password,email, roleid) VALUES ('$username', '$password_hash', '$password', '$email', '1')" ;
+        $sql2 = "INSERT INTO persons (firstname, lastname,  email)  VALUES ('$first_name', '$last_name',  '$email')" ;
         $stmt = $db->stmt_init();
   #####
   // $stmt_user = $db->prepare($sql);
