@@ -77,7 +77,7 @@
                             <span class="material-symbols-outlined text-white ">
                                 settings
                             </span>
-                            <a href="" class="quicklinks d-inline-block w-75 text-white">General Settings</a>
+                            <a href="profile-update.php" class="quicklinks d-inline-block w-75 text-white">General Settings</a>
                         </li>
                         <li class="nav-item d-flex justify-content-between align-items-center text-white">
                             <span class="material-symbols-outlined text-white ">

@@ -34,7 +34,16 @@ button {
   background-color: #49A5FF !important;
 }
 
+.error {
+  display: block;
+  color: #ff0000;
+  /* border: 1px solid #ff0000; */
+}
 
+.success {
+  border: none;
+  color: #008000;
+}
 /* END OF UTILITY STYLES */
 .hero {
   margin-top: 10%;

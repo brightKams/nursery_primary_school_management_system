@@ -1,134 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Combo&family=Karla:wght@700&family=Mulish:ital,wght@0,400;0,600;1,500&family=Nunito&family=Open+Sans&family=Poppins:wght@500&family=Roboto&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+ <?php
 
-    <title>LOGIN PAGE</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</head>
-<body class="login_body ">
+  include("connection.php");
+  include("validateInput.php");
 
-<div class="row w-100 m-auto  login_wrapper ">
+  // if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  //   #validating user inputs
+  //   #$username = htmlspecialchars($_REQUEST["userID"]);
+  //   // OR CREATING AN INPUT VALIDATION FUNCTION TO TEST ALL DATA INPUT
 
-    <div class="col-7 p-4 login_bg d-none d-md-block ">
-        <div class="row  p-1  ">
-        
-            <div class="login_bg_image_container card col-7 p-5 rounded   m-auto" >
-                <div class=" w-100">
+  //   $username  = validateInput($_POST["userID"]);
+  //   if (empty($username)) {
+  //     echo " Please enter USER ID ";
+  //   } else {
+  //     // echo "<strong>Hello World</strong><br>" . $username;
+  //     header("location: dashboard.php");
+  //     $data = empty($username);
+  //   }
+  // }
 
-                    <img src="./assets/images/login_bg_image.png" class="card-img-top" alt="Login baby Image" width="100%" height="100%">
-                </div>
-              <div class="card-body p-1 py-2 ">
-                <h5 class="card-title w-75 fw-bolder">Nursery/Primary School Management System</h5>
-                <p class="card-text ">Manage Student data, Parents' contacts, Subjects, Assessments, Fees, and Classes.</p>
-                
-              </div>
-            </div>
-        </div>
+  while ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    </div>
+
+    if (empty(validateInput($_POST["username"])) || empty(validateInput($_POST["password"]))) {
+      echo "Complete the empty Field(s)";
+      header('Location: login.html');
+    } 
     
-    <div class="form_container col-md-5 col-sm-10 m-auto px-4 py-5  py-md-3 ">
-        <div class="row ">
-            <div class="col-group pb-4 d-md-none">
-                <h5 class="col-12 col-md-8 m-auto fw-bolder">Nursery/Primary School Management System</h5>
-                <p class="card-text col-12 col-md-8 m-auto ">Manage Student data, Parents' contacts, Subjects, Assessments, Fees, and Classes.</p>
+    else {
+      $username = validateInput($_POST["username"]);
+      $password = validateInput($_POST["password"]);
+      // $sql = "SELECT username FROM users WHERE username = '$username' and password = '$password' ";
+      $sql="SELECT roleid, Accountstatus,password_hash FROM users WHERE username='$username' and password='$password'";
 
-            </div>
+      $result = mysqli_query($db, $sql);
+      $row=mysqli_fetch_array($result);
 
-            <div class="col-group">
+      // if (mysqli_num_rows($result) == 1)
+      if(mysqli_num_rows($result) == 1 && $row["roleid"]=="1" && $row["Accountstatus"]=="1" && password_verify($_POST["password"], $row["password_hash"]) )
+      
+      {
 
-                <h3 class="login_heading m-auto col-12 col-md-8 py-2 fw-bolder">
-                    Login
-                </h3>
-            </div>
+        session_start();
+        header("Location: dashboard.php");
+      } 
+      elseif (mysqli_num_rows($result) == 0) {
+        echo "Incorrect Username or Password 
+        <br> <a href=\"login.html\"> Login <a>";
+        exit;
+      }
+      else {
+        echo "<h1>Incorrect Password or email </h1>";
+        header("Location: login.php");
+      }
+    }
 
-        </div>
-
-
-        <form class="row g-2 h-100 needs-validation" action="index.php" method="post">
-          <div class="col-12 col-md-8 py-2 m-auto">
-            <label for="user_ID" class="form-label user_ID_label">User ID</label>
-            <input type="text" class="form-control user_ID" name="userID" id="user_ID" placeholder="Enter User ID" required>
-            <!-- <div class="valid-feedback">
-              Looks good!
-            </div> -->
-            <div class="error-user d-none" name="errorID" id="error">
-                Please Enter USERID!
-            </div>
-          </div>
-          <div class="col-12 col-md-8 py-2 m-auto">
-            <label for="password" class="form-label password_label">Password</label>
-            <input type="password" class="form-control password" name="password" id="password" placeholder="**************" required>
-            <!-- <div class="valid-feedback">
-              Looks good!
-            </div> -->
-          </div>
-          
-          <div class="col-12 col-md-8 py-3 m-auto  ">
-            <button class="btn btn-dark p-2 w-100" type="submit">Submit form</button>
-          </div>
-
-          <div class="col-12 col-md-8 py-1 m-auto text-right">
-            <a class="nav-link forgot_password_link text-primary id="forgot_password_link" aria-current="page" href="#">Forgot your password?</a>
-          </div>
-          <div class="col-12 col-md-8 py-1 m-auto text-right">
-            <a class="nav-link register_link text-primary id="sign_up_link" aria-current="page" href="signup.html">Register</a>
-          </div>
-          
-        </form>
+  }
 
 
 
-        <?php 
 
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                #validating user inputs
-                #$user_id = htmlspecialchars($_REQUEST["userID"]);
-                // OR CREATING AN INPUT VALIDATION FUNCTION TO TEST ALL DATA INPUT
-                function validateInput($data) {
-                    $data = trim($data);
-                    $data = stripslashes($data);
-                    $data = htmlspecialchars($data);
-                    return $data ;
-                };
-                $user_id  = validateInput($_POST["userID"]);
-
-                if (empty($user_id)) {
-                    echo " Please enter USER ID " ;
-                }
-
-                else {
-                    // echo "<strong>Hello World</strong><br>" . $user_id;
-                    header("location: dashboard.php");
-                    $data = empty($user_id);
-                }
-                
-            }
-
-        
-        
-        
-        ?>
-    </div>
-</div>
-
-    
-
-
-<script src="./assets/js/scripts.js"></script>
-</body>
-
-</html>
+  ?>
