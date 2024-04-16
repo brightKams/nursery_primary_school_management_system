@@ -10,13 +10,8 @@
 body {
   font-family: "Poppins";
 }
+
 /* UTILITY STYLES */
-a {
-  text-decoration: none;
-}
-button {
-  transition: all 0.7s ease-in !important;
-}
 .explore-btn:hover {
   background-color: transparent !important;
   color: #49A5FF !important;
@@ -26,18 +21,20 @@ button {
 .enroll-btn {
   border-color: #151515;
   border-width: 1px solid !important;
-  /* transition: all 0.5s ease-in !important; */
 }
 .enroll-btn:hover {
   color: #fff !important;
   border-color: transparent !important;
   background-color: #49A5FF !important;
+
+
 }
 
 
 /* END OF UTILITY STYLES */
 .hero {
   margin-top: 10%;
+ 
 }
 
 .signUp-heading {
@@ -74,7 +71,6 @@ button {
   height: 100%;
 }
 
-
 /* STYLING FOR SIGN UP PAGE */
 
 .sign_up_body {
@@ -88,11 +84,8 @@ button {
     width: 40%;
 }
 
-.form-control {
-  height: 60px;
-
-}
-body.sign_up_body form.signUp_form .form-control, .recoverBtn, .recoverBtn-wrapper {
+.form-control, .recoverBtn, .recoverBtn-wrapper {
+    height: 60px;
     border-right: 0;
 }
 
@@ -107,103 +100,6 @@ body.sign_up_body form.signUp_form .form-control, .recoverBtn, .recoverBtn-wrapp
 
 
 
-/* <<<<<    *****  DASHBOARD STYLINGS  *******>>>>>>>> */
-
-.dashboard-wrapper, .navigation-wrapper {
-  /* height: 100vh; */
-  overflow-y: auto;
-}
-
-.dashboard-navigation-wrapper {
-  min-height: 50vh;
-}
-
-aside {
-  background-color: #4E5F9B;
-  height: 100%;
-}
-.user-profile-img-wrapper {
-  height: 120px;
-  width: 120px;
-}
-
-.nav-item {
-  width: 70%;
-  margin: auto  ;
-  margin: 20px auto;
-}
-
-.material-symbols-outlined {
-  width:20%;
-  padding: 5px;
-}
-.search-btn, .search-btn:hover {
-  height: 100%;
-  width: 100%;
-  border: none;
-  color: #808;
-  outline: transparent;
-  background: transparent;
-}
-
-
-.dashboard > nav .material-symbols-outlined {
-  margin: 3px;
-  width: 30%;
-  height: 100% ;
-  text-align: center;
-  /* border: 1px solid; */
-  
-}
-
-.dashboard-header, .dashboard-main-container {
-  width: 95%;
-  margin: auto;
-}
-
-.grade-container > div {
-    padding: 5px;
-}
-
-.grade-container:hover {
-  cursor: pointer;
-}
-
-.grade-container img {
-  background-color: #4E5F9B;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 10%;
-  outline: none;
-  border: none;
-}
-.grade-score {
-  background-color: #D6EEED; 
-  border-radius: 50%;
-
-}
-
-
-.events-display-card-img {
-  height: 150px;
-}
-
-.event-highlight-card {
-  width: 48%;
-}
- 
-.negative-position {
-  top: 40%;
-  left: 5%;
-}
-.messages-wrapper {
-  width: 32%;
-}
-
-.ward-activities-container {
-  width: 45%;
-}
 @media screen and (max-width: 768px) {
 
   /* .hero-text-wrapper {

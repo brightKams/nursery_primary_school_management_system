@@ -56,17 +56,22 @@
             </div>
 
         </div>
-        <form class="row g-2 h-100 needs-validation" action="login.php" method="post">
+
+
+        <form class="row g-2 h-100 needs-validation" action="login_in.php" method="post">
           <div class="col-12 col-md-8 py-2 m-auto">
             <label for="user_ID" class="form-label user_ID_label">User ID</label>
-            <input type="text" class="form-control user_ID" id="user_ID" name="username" placeholder="Enter User ID" required>
+            <input type="text" class="form-control user_ID" name="username" id="user_ID" placeholder="Enter User ID" required>
             <!-- <div class="valid-feedback">
               Looks good!
             </div> -->
+            <div class="error-user d-none" name="errorID" id="error">
+                Please Enter USERID!
+            </div>
           </div>
           <div class="col-12 col-md-8 py-2 m-auto">
             <label for="password" class="form-label password_label">Password</label>
-            <input type="password" class="form-control password" id="password" name="password" placeholder="**************" required>
+            <input type="password" class="form-control password" name="password" id="password" placeholder="**************" required>
             <!-- <div class="valid-feedback">
               Looks good!
             </div> -->
@@ -77,13 +82,49 @@
           </div>
 
           <div class="col-12 col-md-8 py-1 m-auto text-right">
-            <a class="nav-link forgot_password_link text-primary id="forgot_password_link" aria-current="page" href="forgotPassword.html">Forgot your password?</a>
+            <a class="nav-link forgot_password_link text-primary id="forgot_password_link" aria-current="page" href="#">Forgot your password?</a>
           </div>
           <div class="col-12 col-md-8 py-1 m-auto text-right">
-            <a class="nav-link register_link text-primary id="sign_up_link" aria-current="page" href="signup.php">Register</a>
+            <a class="nav-link register_link text-primary id="sign_up_link" aria-current="page" href="signup.html">Register</a>
           </div>
           
         </form>
+
+
+
+        <?php 
+          include("connection.php");//Connection to the database
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                #validating user inputs
+                #$user_id = htmlspecialchars($_REQUEST["userID"]);
+                // OR CREATING AN INPUT VALIDATION FUNCTION TO TEST ALL DATA INPUT
+                function validateInput($data) {
+                    $data = trim($data);
+                    $data = stripslashes($data);
+                    $data = htmlspecialchars($data);
+                    return $data ;
+                };
+                $user_id  = validateInput($_POST["username"]);
+                $password=validate($_POST['password']);
+                $sql="SELECT userid FROM users WHERE username='$user_id' and password='$password'";
+                $result=mysqli_query($db,$sql);
+
+                if (empty($user_id)) {
+                    echo " Please enter USER ID " ;
+                }
+
+                elseif (mysqli_num_rows($result) == 1) {
+                    // echo "<strong>Hello World</strong><br>" . $user_id;
+                    header("location: index.php");
+                    $data = empty($user_id);
+                }
+                
+            }
+
+        
+        
+        
+        ?>
     </div>
 </div>
 
